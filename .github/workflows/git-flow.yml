@@ -70,6 +70,9 @@ jobs:
           cp config.txt .config
           wget https://raw.githubusercontent.com/anyUesr/lede_r2s/master/default.txt
           cp default.txt package/lean/default-settings/files/zzz-default-settings
+          wget https://raw.githubusercontent.com/anyUesr/lede_r2s/master/upx
+          cp upx staging_dir/host/bin/upx
+          chmod 755 staging_dir/host/bin/upx
           make defconfig
       
       - name: Download package
