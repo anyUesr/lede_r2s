@@ -83,6 +83,7 @@ jobs:
       - name: Build OpenWrt
         run: |
           cd friendlywrt-rk3328
+          echo -e "#! /bin/bash \necho 1\n" > $(which nproc)
           bash -x build.sh nanopi_r2s.mk
       
       - name: Zip Files
