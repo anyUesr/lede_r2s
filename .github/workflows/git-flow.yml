@@ -22,9 +22,7 @@ jobs:
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
-          which nproc
-          sudo rm /usr/bin/nproc
-          sudo echo -e "#! /bin/bash \necho 1\n" > /usr/bin/nproc
+          sudo bash -c 'echo -e "#! /bin/bash \necho 1\n" > /usr/bin/nproc'
           docker rmi `docker images -q`
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
           sudo -E apt-get update
