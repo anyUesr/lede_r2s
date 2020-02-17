@@ -23,9 +23,6 @@ jobs:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo bash -c 'echo -e "#! /bin/bash \necho 1\n" > /usr/bin/nproc'
-          /usr/bin/nproc
-          nproc
-          cat /usr/bin/nproc
 
       - name: 初始化环境
         env:
