@@ -18,12 +18,19 @@ jobs:
         with:
           ref: master
 
-      - name: 初始化环境
+      - name: 修改 nproc
         env:
           DEBIAN_FRONTEND: noninteractive
         run: |
           sudo bash -c 'echo -e "#! /bin/bash \necho 1\n" > /usr/bin/nproc'
+          /usr/bin/nproc
           nproc
+          cat /usr/bin/nproc
+
+      - name: 初始化环境
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
           docker rmi `docker images -q`
           sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
           sudo -E apt-get update
@@ -88,7 +95,6 @@ jobs:
       - name: Build OpenWrt
         run: |
           cd friendlywrt-rk3328
-          sudo echo -e "#! /bin/bash \necho 1\n" > $(which nproc)
           bash -x build.sh nanopi_r2s.mk
       
       - name: Zip Files
