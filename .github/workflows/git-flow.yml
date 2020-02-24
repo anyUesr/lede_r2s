@@ -80,6 +80,9 @@ jobs:
           cp upx staging_dir/host/bin/upx
           chmod 755 staging_dir/host/bin/upx
           make defconfig
+          echo "------------------------------------"
+          cat .config
+          echo "------------------------------------"
       
       - name: Download package
         if: always()
