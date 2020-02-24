@@ -81,7 +81,7 @@ jobs:
           chmod 755 staging_dir/host/bin/upx
           make defconfig
           echo "------------------------------------"
-          cat .config
+          ./scripts/diffconfig.sh
           echo "------------------------------------"
       
       - name: Download package
