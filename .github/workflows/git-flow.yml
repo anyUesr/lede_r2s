@@ -95,7 +95,7 @@ jobs:
       - name: Build OpenWrt
         run: |
           cd friendlywrt-rk3328
-          bash -x build.sh nanopi_r2s.mk
+          sudo bash -x build.sh nanopi_r2s.mk
       
       - name: Zip Files
         run: |
