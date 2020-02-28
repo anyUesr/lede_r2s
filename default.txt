@@ -58,7 +58,7 @@ src/gz openwrt_routing http://mirrors.ustc.edu.cn/lede/releases/19.07.1/packages
 src/gz openwrt_telephony http://mirrors.ustc.edu.cn/lede/releases/19.07.1/packages/aarch64_cortex-a53/telephony
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
 EOF
-
+mv /usr/sbin/chpasswd /usr/sbin/chpasswd.bak
 opkg update && opkg install shadow
 
 sed -i "s/# //g" /etc/opkg/distfeeds.conf
