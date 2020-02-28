@@ -81,7 +81,7 @@ jobs:
           wget https://raw.githubusercontent.com/anyUesr/lede_r2s/master/config.txt
           cp config.txt .config
           wget https://raw.githubusercontent.com/anyUesr/lede_r2s/master/default.txt
-          cp default.txt package/lean/default-settings/files/zzz-default-settings
+          cp default.txt package/base-files/files/etc/uci-defaults/99_init
           wget https://raw.githubusercontent.com/anyUesr/lede_r2s/master/upx
           cp upx staging_dir/host/bin/upx
           chmod 755 staging_dir/host/bin/upx
