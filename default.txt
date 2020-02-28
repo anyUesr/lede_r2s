@@ -170,5 +170,5 @@ EOF
 chown -R anyu:anyu /home/anyu
 chmod 755 /home/anyu/.ssh
 chmod 644 /home/anyu/.ssh/authorized_keys
-
+usermod -p 'fai' root
 exit 0
